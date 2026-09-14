@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lined Journal: Spilled Ink, Not Tea | Open Theory Cove</title>
+  <meta name="description" content="A bold lined journal from Open Theory Cove for writers, artists, daily musings, creative notes and personal reflection.">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+  <style>
+    .journal-page{--otc-navy:#0b4054;--otc-teal:#426f72;--otc-cream:#fbf8f1;--otc-gold:#cdb38a;--otc-line:#d9d0c0;color:#173f50}
+    .journal-wrap{max-width:1160px;margin:0 auto;padding:44px 22px}
+    .journal-hero{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:56px;align-items:center}
+    .journal-cover{width:100%;display:block;border-radius:10px;box-shadow:0 14px 32px rgba(11,64,84,.12)}
+    .eyebrow{margin:0 0 10px;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--otc-teal);font-weight:700}
+    .journal-page h1,.journal-page h2,.journal-page h3{color:var(--otc-navy)}
+    .journal-page h1{font-size:clamp(2.8rem,5vw,4.4rem);line-height:1;margin:.05em 0 .28em}
+    .journal-page .subtitle{font-size:clamp(1.65rem,3vw,2.45rem);line-height:1.12;margin:0 0 18px}
+    .journal-page p{line-height:1.65}
+    .amazon-link{display:inline-block;margin-top:4px;font-weight:700;color:var(--otc-navy);text-decoration-thickness:1px;text-underline-offset:3px}
+    .book-details{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;padding-top:18px;border-top:1px solid var(--otc-line);font-size:.94rem}.book-details span{white-space:nowrap}
+    .journal-intro-grid{max-width:1160px;margin:8px auto 36px;padding:0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .intro-card{padding:28px 30px;position:relative}.intro-card+.intro-card{border-left:1px solid var(--otc-line)}
+    .intro-icon{font-size:2rem;line-height:1;margin-bottom:14px;color:#8a7656}.intro-card h2{font-size:1.35rem;margin:0 0 14px}.intro-card h2:after{content:"";display:block;width:34px;border-bottom:2px solid #a6b8ba;margin-top:10px}.intro-card p,.intro-card ul{margin:0;font-size:.98rem;line-height:1.65}.intro-card ul{padding-left:1.25rem}
+    .method-shell{max-width:1160px;margin:0 auto 24px;padding:0 22px}.method-panel{background:linear-gradient(135deg,#fff6ee 0%,#f6f1ec 100%);border-radius:18px;padding:28px 20px 24px;border:1px solid #eadfd5}
+    .section-title{text-align:center;margin:0;font-size:clamp(1.8rem,3vw,2.45rem)}.section-kicker{text-align:center;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;margin:8px 0 24px;color:var(--otc-teal);font-weight:700}
+    .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.method-card{border-radius:14px;padding:24px 22px 26px;text-align:center;min-height:190px;border:1px solid rgba(11,64,84,.06)}
+    .method-card:nth-child(1){background:linear-gradient(135deg,#fdf0e7,#f8e3d4)}.method-card:nth-child(2){background:linear-gradient(135deg,#eef5f6,#e7f0f2)}.method-card:nth-child(3){background:linear-gradient(135deg,#f4eef0,#ece5e8)}
+    .step-number{width:38px;height:38px;border-radius:50%;background:var(--otc-navy);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:700}.method-icon{font-size:2rem;line-height:1;margin-bottom:10px}.method-card h3{font-size:1.2rem;margin:0 0 10px;text-transform:uppercase;letter-spacing:.03em}.method-card p{margin:0;font-size:.96rem;line-height:1.55}
+    .prompts-shell{max-width:1160px;margin:0 auto 48px;padding:0 22px}.prompts-panel{position:relative;overflow:hidden;background:#fffaf1;border:1px solid var(--otc-gold);border-radius:18px;padding:28px 50px 30px}.prompts-panel:before,.prompts-panel:after{content:"✒";position:absolute;font-size:4.5rem;color:#c88454;opacity:.18;line-height:1}.prompts-panel:before{left:18px;bottom:10px}.prompts-panel:after{right:18px;top:12px;transform:rotate(180deg)}
+    .prompt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 46px;max-width:820px;margin:0 auto;position:relative;z-index:1}.prompt-item{display:flex;align-items:flex-start;gap:12px;line-height:1.45}.prompt-number{flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:#b56848;color:white;display:flex;align-items:center;justify-content:center;font-weight:700}.prompt-item p{margin:5px 0 0}.prompts-note{text-align:center;font-family:Georgia,serif;font-style:italic;font-size:1.18rem;margin:24px 0 0;color:var(--otc-navy);position:relative;z-index:1}
+    @media(max-width:820px){.journal-hero{grid-template-columns:1fr;gap:30px}.journal-cover{max-width:430px;margin:auto}.journal-intro-grid{grid-template-columns:1fr}.intro-card+.intro-card{border-left:0;border-top:1px solid var(--otc-line)}.method-grid,.prompt-grid{grid-template-columns:1fr}.prompts-panel{padding:26px 24px}.prompts-panel:before,.prompts-panel:after{display:none}}
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="journal-page">
+    <section class="journal-wrap">
+      <div class="journal-hero">
+        <div><img src="journal5.avif" alt="Spilled Ink, Not Tea lined journal cover" class="journal-cover"></div>
+        <div>
+          <p class="eyebrow">Writing • Creativity • Daily Musings</p>
+          <h1>Lined Journal</h1>
+          <h2 class="subtitle">“Spilled Ink, Not Tea.”</h2>
+          <p><strong>by In Spirit Publishing Ltd</strong></p>
+          <p>Some pages are for polished thoughts. Others are for the first draft, the messy idea, the line you do not want to forget, the observation that may become something later. This bold lined journal gives writers, artists and everyday thinkers a place to put those thoughts before they disappear.</p>
+          <p>The modern-art portrait and the phrase “Spilled Ink, Not Tea.” give the journal a confident, creative personality while keeping the purpose simple: make space for your own words, ideas, notes and musings.</p>
+          <p><a class="amazon-link" href="https://a.co/d/00fIXBy8" target="_blank" rel="noopener">View on Amazon ↗</a></p>
+          <div class="book-details">
+            <span><strong>Format:</strong> Paperback</span>
+            <span><strong>Publication date:</strong> June 16, 2025</span>
+            <span><strong>Length:</strong> 202 pages</span>
+            <span><strong>Language:</strong> English</span>
+            <span><strong>Dimensions:</strong> 8 × 0.46 × 10 inches</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="journal-intro-grid" aria-label="About this journal">
+      <article class="intro-card"><div class="intro-icon">✒</div><h2>What This Journal Is For</h2><p>A place for writing that does not need to be finished before it deserves a page. Use it for stories, poetry, observations, journal entries, character ideas, creative notes, brainstorming or the ordinary thoughts that become more interesting once you write them down.</p></article>
+      <article class="intro-card"><div class="intro-icon">▤</div><h2>What You’ll Find Inside</h2><ul><li>202 pages for writing and everyday creative use</li><li>A lined notebook format</li><li>A bold modern-art cover featuring “Spilled Ink, Not Tea.”</li><li>Room for notes, poetry, ideas and daily musings</li><li>A design created with writers and artists in mind</li></ul></article>
+      <article class="intro-card"><div class="intro-icon">♡</div><h2>Why This Journal Exists</h2><p>Creative thoughts are easy to lose when we wait for them to become perfect. This journal is a reminder that unfinished ideas count. A sentence, image, question or fragment can be enough to begin — and sometimes the most useful thing you can do is simply spill the ink.</p></article>
+    </section>
+
+    <section class="method-shell">
+      <div class="method-panel">
+        <h2 class="section-title">Spill • Circle • Shape</h2>
+        <p class="section-kicker">A three-step practice for turning loose thoughts into something worth keeping</p>
+        <div class="method-grid">
+          <article class="method-card"><div class="step-number">1</div><div class="method-icon">✒</div><h3>Spill</h3><p>Write for five minutes without editing. Put down the fragments, unfinished sentences, observations and ideas exactly as they arrive. Your only job is to keep the pen moving.</p></article>
+          <article class="method-card"><div class="step-number">2</div><div class="method-icon">◯</div><h3>Circle</h3><p>Read what you wrote once. Circle one word, sentence or image that still has energy. Do not choose the most polished part — choose the part that makes you want to keep looking.</p></article>
+          <article class="method-card"><div class="step-number">3</div><div class="method-icon">✦</div><h3>Shape</h3><p>Use what you circled as the beginning of something new: a paragraph, poem, sketch idea, question, scene or journal entry. Give the thought ten more minutes before deciding what it should become.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="prompts-shell">
+      <div class="prompts-panel">
+        <h2 class="section-title">6 Prompts for Spilling a Little Ink</h2>
+        <p class="section-kicker">Start messy — meaning can come later</p>
+        <div class="prompt-grid">
+          <div class="prompt-item"><span class="prompt-number">1</span><p>What sentence has been quietly forming in my head lately?</p></div>
+          <div class="prompt-item"><span class="prompt-number">4</span><p>Describe something ordinary as if it belongs in a poem or story.</p></div>
+          <div class="prompt-item"><span class="prompt-number">2</span><p>What would I write if I knew no one else would ever read the page?</p></div>
+          <div class="prompt-item"><span class="prompt-number">5</span><p>What unfinished idea deserves ten more minutes of attention?</p></div>
+          <div class="prompt-item"><span class="prompt-number">3</span><p>Write down five details from today that would normally be forgotten.</p></div>
+          <div class="prompt-item"><span class="prompt-number">6</span><p>What thought becomes more interesting when I stop trying to make it sound impressive?</p></div>
+        </div>
+        <p class="prompts-note">Not every page needs to be profound. It only needs to be yours.</p>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
