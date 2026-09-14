@@ -19,7 +19,7 @@
 <section class="category-hero"><div class="wrap"><div class="eyebrow">Create • Restore • Inspire</div><h1>Journals</h1><p class="lead">Journals for reflection, gratitude, creativity, memory keeping and the thoughts you want to understand a little better.</p></div></section>
 <main class="page storefront"><div class="wrap">
 <section class="featured-journal">
-  <div class="featured-cover"><img src="71QSu13RwRL._SL1360_.avif" alt="Journal: A Lined Notebook for Daily Writing, Reflection, and Journaling"></div>
+  <div class="featured-cover"><img src="https://m.media-amazon.com/images/I/71QSu13RwRL._SL1360_.jpg" alt="Journal: A Lined Notebook for Daily Writing, Reflection, and Journaling"></div>
   <div class="featured-copy"><div class="eyebrow">Featured Journal • Daily Reflection</div><h2>Journal: A Lined Notebook for Daily Writing, Reflection, and Journaling</h2><p>A calm, flexible lined journal for everyday writing, gratitude, decisions, memories and personal reflection. Its individual page includes the <strong>Notice • Name • Next</strong> five-minute journaling method, plus prompts for recognizing patterns over time.</p><a class="featured-link" href="journal.html">Explore the Journal & Practice →</a></div>
 </section>
 <div class="shop-head"><div><div class="eyebrow">Browse the Collection</div><h1>Journals with more to explore</h1><p>These completed journal pages include an original reflection, journal practice, poem or helpful article in addition to the product details.</p></div></div>
@@ -27,7 +27,7 @@
 <div id="site-footer"></div>
 <script>
 const journals=[
-  {title:"Дневник (Journal)",href:"B08X6DX98J.html",sub:"Journal • Includes the Inner Peace reflection",cover:"61C-XgIu8IL._SL1293_.avif"},
+  {title:"Дневник (Journal)",href:"dnevnik-journal.html",sub:"Journal • Includes the Inner Peace reflection",cover:"https://m.media-amazon.com/images/I/61C-XgIu8IL._SL1293_.jpg"},
   {title:"Daily Journal: With Focus of Intention",href:"daily-journal-focus-intention.html",sub:"Daily reflection • Includes a journaling practice"},
   {title:"Dream Journal",href:"dream-journal.html",sub:"Dream reflection • Includes a journaling article"},
   {title:"Manifest Your Dreams: Focused Journal",href:"manifest-your-dreams.html",sub:"Goal-focused journal • Includes a journaling article"}
@@ -37,7 +37,7 @@ journals.forEach(item=>{
   const card=document.createElement('article');
   card.className='product-card';
   const cover=item.cover
-    ? `<div class="book-shell"><img src="${encodeURI(item.cover)}" alt="${item.title.replace(/"/g,'&quot;')} cover"></div>`
+    ? `<div class="book-shell"><img src="${item.cover}" alt="${item.title.replace(/"/g,'&quot;')} cover"></div>`
     : `<div class="text-cover">${item.title}</div>`;
   card.innerHTML=`<a class="product-link" href="${item.href}"><div class="product-image">${cover}</div></a><div class="product-info"><h2 class="product-title"><a href="${item.href}">${item.title}</a></h2><div class="product-sub">${item.sub}</div></div>`;
   grid.appendChild(card);
