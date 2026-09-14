@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sketchbook and Journal: A Journey Through My Crazy Mind | Open Theory Cove</title>
+  <meta name="description" content="A creative sketchbook and journal from Open Theory Cove for writing, doodling, reflecting, venting, dreaming and making sense of a busy mind.">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+  <style>
+    .journal-page{--otc-navy:#0b4054;--otc-teal:#426f72;--otc-cream:#fbf8f1;--otc-gold:#cdb38a;--otc-line:#d9d0c0;color:#173f50}
+    .journal-wrap{max-width:1160px;margin:0 auto;padding:44px 22px}
+    .journal-hero{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:56px;align-items:center}
+    .journal-cover{width:100%;display:block;border-radius:10px;box-shadow:0 14px 32px rgba(11,64,84,.12)}
+    .eyebrow{margin:0 0 10px;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--otc-teal);font-weight:700}
+    .journal-page h1,.journal-page h2,.journal-page h3{color:var(--otc-navy)}
+    .journal-page h1{font-size:clamp(2.8rem,5vw,4.4rem);line-height:1;margin:.05em 0 .28em}
+    .journal-page .subtitle{font-size:clamp(1.65rem,3vw,2.45rem);line-height:1.12;margin:0 0 18px}
+    .journal-page p{line-height:1.65}
+    .amazon-link{display:inline-block;margin-top:4px;font-weight:700;color:var(--otc-navy);text-decoration-thickness:1px;text-underline-offset:3px}
+    .book-details{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;padding-top:18px;border-top:1px solid var(--otc-line);font-size:.94rem}
+    .book-details span{white-space:nowrap}
+    .journal-intro-grid{max-width:1160px;margin:8px auto 36px;padding:0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .intro-card{padding:28px 30px;position:relative}
+    .intro-card+.intro-card{border-left:1px solid var(--otc-line)}
+    .intro-icon{font-size:2rem;line-height:1;margin-bottom:14px;color:#8a7656}
+    .intro-card h2{font-size:1.35rem;margin:0 0 14px}
+    .intro-card h2:after{content:"";display:block;width:34px;border-bottom:2px solid #a6b8ba;margin-top:10px}
+    .intro-card p,.intro-card ul{margin:0;font-size:.98rem;line-height:1.65}
+    .intro-card ul{padding-left:1.25rem}
+    .method-shell{max-width:1160px;margin:0 auto 24px;padding:0 22px}
+    .method-panel{background:linear-gradient(135deg,#f8f8f4 0%,#f5f1e9 100%);border-radius:18px;padding:28px 20px 24px;border:1px solid #ece7dc}
+    .section-title{text-align:center;margin:0;font-size:clamp(1.8rem,3vw,2.45rem)}
+    .section-kicker{text-align:center;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;margin:8px 0 24px;color:var(--otc-teal);font-weight:700}
+    .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .method-card{border-radius:14px;padding:24px 22px 26px;text-align:center;min-height:190px;border:1px solid rgba(11,64,84,.06)}
+    .method-card:nth-child(1){background:linear-gradient(135deg,#eef5f6,#e7f0f2)}
+    .method-card:nth-child(2){background:linear-gradient(135deg,#faf5ea,#f4ede0)}
+    .method-card:nth-child(3){background:linear-gradient(135deg,#f3edf1,#ebe3e9)}
+    .step-number{width:38px;height:38px;border-radius:50%;background:var(--otc-navy);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:700}
+    .method-icon{font-size:2rem;line-height:1;margin-bottom:10px}
+    .method-card h3{font-size:1.2rem;margin:0 0 10px;text-transform:uppercase;letter-spacing:.03em}
+    .method-card p{margin:0;font-size:.96rem;line-height:1.55}
+    .prompts-shell{max-width:1160px;margin:0 auto 48px;padding:0 22px}
+    .prompts-panel{position:relative;overflow:hidden;background:#fffaf1;border:1px solid var(--otc-gold);border-radius:18px;padding:28px 50px 30px}
+    .prompts-panel:before,.prompts-panel:after{content:"✦";position:absolute;font-size:5rem;color:#d7c6a8;opacity:.28;line-height:1}
+    .prompts-panel:before{left:18px;bottom:10px}.prompts-panel:after{right:18px;top:12px}
+    .prompt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 46px;max-width:820px;margin:0 auto;position:relative;z-index:1}
+    .prompt-item{display:flex;align-items:flex-start;gap:12px;line-height:1.45}
+    .prompt-number{flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:#7d9b8f;color:white;display:flex;align-items:center;justify-content:center;font-weight:700}
+    .prompt-item p{margin:5px 0 0}.prompts-note{text-align:center;font-family:Georgia,serif;font-style:italic;font-size:1.18rem;margin:24px 0 0;color:var(--otc-navy);position:relative;z-index:1}
+    @media(max-width:820px){.journal-hero{grid-template-columns:1fr;gap:30px}.journal-cover{max-width:430px;margin:auto}.journal-intro-grid{grid-template-columns:1fr}.intro-card+.intro-card{border-left:0;border-top:1px solid var(--otc-line)}.method-grid,.prompt-grid{grid-template-columns:1fr}.prompts-panel{padding:26px 24px}.prompts-panel:before,.prompts-panel:after{display:none}}
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="journal-page">
+    <section class="journal-wrap">
+      <div class="journal-hero">
+        <div><img src="Images/Book-Cover-Images/journal2-cover.svg" alt="A Journey Through My Crazy Mind: Sketchbook and Journal cover" class="journal-cover"></div>
+        <div>
+          <p class="eyebrow">Creative Journaling &amp; Sketching</p>
+          <h1>Sketchbook and Journal</h1>
+          <h2 class="subtitle">A Journey Through My Crazy Mind</h2>
+          <p><strong>by Michelle Skolyak / Open Theory Cove</strong></p>
+          <p>Life does not always make sense — and that is okay. This journal gives you room to think, vent, dream, doodle and process without judgment. Whether your mind feels creative, overwhelmed or somewhere in between, these pages are ready to hold whatever you bring to them.</p>
+          <p>Use it as a daily journal, a stream-of-consciousness notebook, a creative outlet, a private place to work through your thoughts, or a place where words and sketches can exist side by side.</p>
+          <p><a class="amazon-link" href="https://a.co/d/04sfgQOr" target="_blank" rel="noopener">View on Amazon ↗</a></p>
+          <div class="book-details">
+            <span><strong>Format:</strong> Paperback</span>
+            <span><strong>Publication date:</strong> March 9, 2021</span>
+            <span><strong>Length:</strong> 126 pages</span>
+            <span><strong>Language:</strong> English</span>
+            <span><strong>Series:</strong> A Journey Through My Crazy Mind</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="journal-intro-grid" aria-label="About this journal">
+      <article class="intro-card"><div class="intro-icon">✎</div><h2>What This Journal Is For</h2><p>A judgment-free place for the thoughts that do not arrive in neat sentences. Write when you need words, sketch when you do not, and use both when your mind is moving faster than either one can keep up.</p></article>
+      <article class="intro-card"><div class="intro-icon">▤</div><h2>What You’ll Find Inside</h2><ul><li>126 pages for writing, journaling and free expression</li><li>Space that welcomes both words and sketches</li><li>Freedom to doodle, brainstorm, vent and reflect</li><li>A creative format for thoughts that feel hard to organize</li><li>A flexible companion for everyday life</li></ul></article>
+      <article class="intro-card"><div class="intro-icon">♡</div><h2>Why This Journal Exists</h2><p>Not every thought needs to be polished, solved or explained. Sometimes clarity begins by getting what is in your head onto a page. This journal was made to give messy, funny, difficult, hopeful and completely random thoughts a place to land.</p></article>
+    </section>
+
+    <section class="method-shell">
+      <div class="method-panel">
+        <h2 class="section-title">Draw It • Write It • Let It Go</h2>
+        <p class="section-kicker">A three-step reset for a busy mind</p>
+        <div class="method-grid">
+          <article class="method-card"><div class="step-number">1</div><div class="method-icon">✎</div><h3>Draw It</h3><p>Without worrying about artistic skill, sketch what your mind feels like right now. Use shapes, symbols, lines, faces, objects or complete nonsense. The point is expression, not perfection.</p></article>
+          <article class="method-card"><div class="step-number">2</div><div class="method-icon">☁</div><h3>Write It</h3><p>Look at what you drew and write whatever comes to mind. What does the image represent? What thought keeps returning? What feels loud, unfinished, exciting or heavy?</p></article>
+          <article class="method-card"><div class="step-number">3</div><div class="method-icon">↗</div><h3>Let It Go</h3><p>Circle one thing you want to keep, underline one thing you want to change, and cross out one thing you are ready to stop carrying today.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="prompts-shell">
+      <div class="prompts-panel">
+        <h2 class="section-title">6 Prompts for Your Beautifully Chaotic Mind</h2>
+        <p class="section-kicker">Use words, pictures, symbols — or all three</p>
+        <div class="prompt-grid">
+          <div class="prompt-item"><span class="prompt-number">1</span><p>If my mind had a weather forecast today, what would it be?</p></div>
+          <div class="prompt-item"><span class="prompt-number">4</span><p>Draw the thought taking up the most space in your head.</p></div>
+          <div class="prompt-item"><span class="prompt-number">2</span><p>What is something I keep overthinking that might be simpler than it feels?</p></div>
+          <div class="prompt-item"><span class="prompt-number">5</span><p>What would I say if I knew no one would judge the answer?</p></div>
+          <div class="prompt-item"><span class="prompt-number">3</span><p>What deserves more of my attention — and what deserves less?</p></div>
+          <div class="prompt-item"><span class="prompt-number">6</span><p>What is one thought I can leave on this page instead of carrying with me?</p></div>
+        </div>
+        <p class="prompts-note">Your mind does not have to be tidy to be worth listening to.</p>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
