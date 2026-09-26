@@ -17,3 +17,9 @@
 .book-intro .cover-frame img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
 @media(max-width:1100px) and (min-width:651px){.book-intro{grid-template-columns:minmax(0,1fr) 350px}.book-intro .cover-frame{max-width:350px}}
 @media(max-width:650px){.book-intro .cover-frame{max-width:300px}}
+
+/* Full-width readable editorial content across all shared pages */
+.section-intro,.brand-close p,.blog-intro h1,.blog-intro p,.article-hero .container,.article-hero h1,.article-hero .lede{max-width:none;width:100%}
+.section>p:not(.quiet):not(.look-caption),.section>.section-intro{max-width:none}
+@media(min-width:651px){.section-intro{font-size:18px;line-height:1.72}.blog-intro p{font-size:18px;line-height:1.7}.article-hero .lede{font-size:20px}}
+@media(max-width:650px){.section-intro,.blog-intro p,.article-hero .lede{font-size:16px;line-height:1.65}}
