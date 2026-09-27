@@ -23,3 +23,9 @@
 .section>p:not(.quiet):not(.look-caption),.section>.section-intro{max-width:none}
 @media(min-width:651px){.section-intro{font-size:18px;line-height:1.72}.blog-intro p{font-size:18px;line-height:1.7}.article-hero .lede{font-size:20px}}
 @media(max-width:650px){.section-intro,.blog-intro p,.article-hero .lede{font-size:16px;line-height:1.65}}
+
+/* Unified site footer partner links */
+.footer .footer-content{display:grid;grid-template-columns:minmax(180px,.7fr) minmax(120px,.45fr) minmax(300px,1.35fr);gap:38px;align-items:start}
+.footer-partners{display:flex;flex-direction:column;gap:20px}.footer-partner{display:grid;grid-template-columns:64px 1fr;gap:14px;padding-bottom:20px;border-bottom:1px solid #789594}.footer-partner:last-child{border-bottom:0;padding-bottom:0}.footer-partner img{width:64px;height:64px;object-fit:cover;border-radius:6px;background:#fff}.footer-partner h3{font:700 21px/1.15 Arial,sans-serif;color:#fff;margin:2px 0 4px}.footer-partner .tag{display:block;text-transform:uppercase;letter-spacing:.15em;font-size:9px;font-weight:700;color:#d8bc94;margin-bottom:10px}.footer-partner p{font-size:13px;line-height:1.5;margin:0 0 8px;color:#e2ece7}.footer-partner a{font-weight:700;text-underline-offset:3px}.footer-nav-title{display:block;text-transform:uppercase;letter-spacing:.15em;font-size:10px;color:#d8bc94;font-weight:700;margin-bottom:8px}
+@media(max-width:850px){.footer .footer-content{grid-template-columns:1fr 1fr}.footer-partners{grid-column:1/-1}}
+@media(max-width:650px){.footer .footer-content{display:flex;flex-direction:column}.footer-partners{width:100%}.footer-partner{grid-template-columns:56px 1fr}.footer-partner img{width:56px;height:56px}.footer-nav{flex-direction:column}}
