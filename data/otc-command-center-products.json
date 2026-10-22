@@ -1,0 +1,16 @@
+{
+  "format": "otc-published-products-v1",
+  "products": {
+    "bc72bd1cb773d4787b8c6f25": {
+      "path": "product-my-story-bw2hrfbc.html",
+      "category": "journals",
+      "title": "My Story",
+      "description": "Unfold the chapters of your life with My Story, a thoughtfully designed guided journal that helps you explore, process, and reflect on a specific event that shaped who you are. Whether you're seeking ",
+      "image": "asset/otc-products/bc72bd1cb773d4787b8c6f25/c604933a-b7db-4853-bdbb-817ffde26425.jpg",
+      "active": true,
+      "updated": "2026-10-22T22:11:24.807Z",
+      "revision": "15847c99-fada-4ed8-bb88-85ca2026314b",
+      "intent": "de330da6c3ea615b517380d93a0c9a615acfbdbaef849c21a9fd8c9b99e0c7f5"
+    }
+  }
+}
