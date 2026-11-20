@@ -146,3 +146,63 @@
   align-self: center;
 }
 .bookshop-studio .site-header .studio-facebook:hover { color: #dfaa70; }
+
+
+/* Shared product-card actions: readable, spaced and touch-friendly on every collection. */
+.bookshop-studio .library-card .product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .65rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+}
+.bookshop-studio .library-card .product-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin: 0;
+  padding: .65rem .95rem;
+  border: 1px solid #b88a65;
+  border-radius: .5rem;
+  background: #fff9ee;
+  color: #19363b;
+  font-size: .95rem;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.bookshop-studio .library-card .product-actions a:hover,
+.bookshop-studio .library-card .product-actions a:focus-visible {
+  background: #19363b;
+  color: #fff9ee;
+}
+@media (max-width: 780px) {
+  /* Keep the sticky navigation, but reclaim vertical room on phones. */
+  .bookshop-studio .site-header {
+    padding: .45rem .75rem .5rem;
+    gap: .2rem;
+  }
+  .bookshop-studio .site-header .wordmark {
+    gap: .4rem;
+  }
+  .bookshop-studio .site-header .mark { width: 2.25rem; }
+  .bookshop-studio .site-header .wordmark > span:last-child {
+    font-size: clamp(.95rem, 4vw, 1.2rem);
+  }
+  .bookshop-studio .site-header nav {
+    gap: .1rem .7rem;
+    justify-content: center;
+  }
+  .bookshop-studio .site-header nav a {
+    min-height: 32px;
+    font-size: clamp(.78rem, 3.25vw, .96rem);
+    line-height: 1.15;
+  }
+  .bookshop-studio .library-card .product-actions { gap: .6rem; }
+}
+@media (max-width: 390px) {
+  .bookshop-studio .library-card .product-actions a { flex: 1 1 100%; }
+}
