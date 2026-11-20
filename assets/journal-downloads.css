@@ -1,0 +1,9 @@
+.journal-download-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:1.3rem; }
+.journal-download-grid article,.journal-tip { padding:1.15rem; border:1px solid var(--line); border-radius:1rem; background:var(--paper); }
+.journal-download-grid article { display:flex; flex-direction:column; align-items:start; }
+.journal-download-grid img { width:100%; height: auto; aspect-ratio:4/5; object-fit:contain; background:white; }
+.journal-download-grid h3 { margin-block:1rem; }
+.journal-download-grid a { margin-top:auto; font-size:1rem; }
+.journal-tip { margin-top:2rem; }
+.journal-preview-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(.4rem,2vw,1.25rem); margin:1.5rem 0; max-width:760px; }
+.journal-preview-grid img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:.45rem; background:white; }

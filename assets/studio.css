@@ -1,0 +1,148 @@
+.bookshop-studio {
+  --ink: #19363b;
+  --paper: #f6eedf;
+  --copper: #bc784c;
+}
+.bookshop-studio .studio-hero-art {
+  background-image: url('bookshop-studio-hero.webp');
+}
+.bookshop-studio.workshop-inner {
+  background: linear-gradient(180deg,#f7efe3 0%,#fbf5e9 65%,#ead9c5 100%);
+  --deep: #183b41;
+  --sea: #22575b;
+  --line: #dfcfba;
+}
+.bookshop-studio.workshop-inner .workshop-intro {
+  background: linear-gradient(110deg,#faf2e3,#efdfcd);
+}
+.bookshop-studio.workshop-inner .section-soft,
+.bookshop-studio.workshop-inner .facts { background-color: #eee2d0; }
+.bookshop-studio.workshop-inner .draft-footer {
+  background: linear-gradient(180deg,transparent,#e6d6c1);
+}
+@media (max-width: 780px) {
+  .bookshop-studio .site-header { padding: .65rem 1rem .4rem; }
+  .bookshop-studio .site-header nav { gap: .25rem clamp(.7rem,4vw,1.7rem); }
+  .bookshop-studio .site-header nav a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    font-size: clamp(.94rem,4vw,1.12rem);
+  }
+  .bookshop-studio .hero {
+    padding: clamp(3rem,12vw,5rem) 6% clamp(12rem,50vw,19rem);
+    background-position: 72% center;
+  }
+  .bookshop-studio .hero::before {
+    background: linear-gradient(180deg,#102220e8 0%,#10222095 39%,transparent 73%);
+  }
+  .bookshop-studio .hero h1 {
+    font-size: clamp(2.25rem,10vw,4rem);
+    line-height: 1.03;
+    max-width: 12em;
+  }
+}
+
+.studio-product-photo { display: block; width: 100%; aspect-ratio: 1.1; object-fit: cover; }
+
+.bookshop-studio .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: .5rem clamp(.75rem, 2vw, 2rem);
+  padding-inline: clamp(1rem, 3vw, 3rem);
+  box-shadow: 0 4px 14px rgb(16 43 51 / 24%);
+}
+.bookshop-studio .skip { z-index: 11; }
+.bookshop-studio .site-header .wordmark { flex-shrink: 0; }
+.bookshop-studio .site-header .mark { width: clamp(2.5rem, 5vw, 5rem); }
+.bookshop-studio .site-header .wordmark > span:last-child {
+  font-size: clamp(1.05rem, 1.65vw, 1.75rem);
+}
+.bookshop-studio .site-header nav {
+  justify-content: flex-end;
+  gap: .1rem clamp(.55rem, 1.15vw, 1.25rem);
+}
+.bookshop-studio .site-header nav a {
+  font-size: clamp(.94rem, 1.16vw, 1.16rem);
+  white-space: nowrap;
+}
+.bookshop-studio :is(main, section, h1, h2)[id] { scroll-margin-top: 7rem; }
+
+.bookshop-studio .studio-inner-banner {
+  position: relative;
+  height: clamp(13rem, 32vw, 31rem);
+  background: #19363b var(--scene) center 60% / cover no-repeat;
+  box-shadow: 0 5px 15px rgb(53 35 21 / 18%);
+}
+@media (max-width: 780px) {
+  .bookshop-studio .site-header nav { justify-content: center; }
+  .bookshop-studio .site-header nav a { min-height: 32px; }
+  .bookshop-studio .studio-inner-banner {
+    height: clamp(9rem, 31vw, 14rem);
+    background-size: auto max(100%, 64vw);
+    background-position: 73% 60%;
+  }
+  .bookshop-studio :is(main, section, h1, h2)[id] { scroll-margin-top: 10rem; }
+}
+
+.bookshop-studio .studio-inner-banner {
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+}
+.bookshop-studio .studio-inner-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(9 29 34 / 78%), rgb(9 29 34 / 67%) 33%, transparent 64%);
+}
+.bookshop-studio .studio-banner-copy {
+  width: min(43%, 44rem);
+  margin-left: clamp(2rem, 12.6vw, 12rem);
+  padding-block: 1rem;
+  color: #fff3df;
+}
+.bookshop-studio .studio-banner-copy h1 {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(2rem, 4.4vw, 4.65rem);
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 38%);
+}
+.bookshop-studio .studio-banner-copy p {
+  color: inherit;
+  margin: .65rem 0 0;
+  font-size: clamp(.95rem, 1.25vw, 1.1rem);
+  line-height: 1.4;
+}
+.bookshop-studio .studio-banner-copy .kicker { color: #f1cb9b; }
+
+@media (max-width: 780px) {
+  .bookshop-studio .studio-inner-banner {
+    height: auto;
+    min-height: clamp(10rem, 36vw, 16rem);
+    background-size: cover;
+  }
+  .bookshop-studio .studio-inner-banner::before {
+    background: linear-gradient(90deg, rgb(9 29 34 / 87%), rgb(9 29 34 / 69%) 70%, rgb(9 29 34 / 25%));
+  }
+  .bookshop-studio .studio-banner-copy {
+    width: min(85%, 36rem);
+    margin-left: clamp(1.2rem, 8vw, 4rem);
+    padding-block: 1.5rem;
+  }
+  .bookshop-studio .studio-banner-copy h1 { font-size: clamp(1.75rem, 5vw, 3rem); }
+}
+
+.bookshop-studio .site-header .studio-facebook {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  align-self: center;
+}
+.bookshop-studio .site-header .studio-facebook:hover { color: #dfaa70; }

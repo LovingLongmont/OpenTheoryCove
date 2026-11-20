@@ -1,0 +1,6 @@
+.cove-product-intro { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); align-items:start; gap:clamp(1rem,3vw,2.5rem); margin:1rem 0 2rem; }
+.cove-product-intro h1 { margin-top:0; }
+.cove-product-intro figure { margin:0; min-width:0; }
+.cove-product-intro img { display:block; width:100%; height:auto; border-radius:.8rem; border:1px solid var(--line); }
+.cove-product-intro figcaption { margin-top:.55rem; }
+@media(max-width:700px) { .cove-product-intro { grid-template-columns:minmax(0,1fr); } }

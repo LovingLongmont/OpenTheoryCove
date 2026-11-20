@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lovinglongmont.github.io/OpenTheoryCove/sitemap.xml
+Sitemap: https://opentheorycove.com/sitemap.xml

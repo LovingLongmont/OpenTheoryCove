@@ -1,0 +1,137 @@
+:root {
+  color-scheme: light;
+  --ink: #102e36;
+  --paper: #f6eedf;
+  --copper: #bc784c;
+  --text: #f9edda;
+  --accent: #87401e;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid #19a1a6; outline-offset: 4px; }
+.skip { position: absolute; z-index: 5; left: 1rem; top: 1rem; transform: translateY(-300%); background: white; padding: .8rem; }
+.skip:focus { transform: none; }
+.site-header {
+  display: flex; justify-content: space-between; align-items: center; gap: 1.25rem 2rem;
+  padding: .9rem clamp(1.25rem, 4vw, 4rem); background: linear-gradient(115deg,#102b33,#163841);
+  color: var(--text); border-bottom: 2px solid var(--copper);
+}
+.wordmark { display: inline-flex; align-items: center; gap: clamp(.7rem, 1.4vw, 1.45rem); text-decoration: none; }
+.wordmark > span:last-child {
+  text-transform: uppercase; letter-spacing: .13em; font-size: clamp(1.15rem, 2.25vw, 2.15rem);
+  border-left: 1px solid var(--copper); padding: .25rem 0 .25rem clamp(.7rem, 1.5vw, 1.5rem);
+}
+.mark { width: clamp(2.5rem, 7vw, 6rem); height: 2.7rem; position: relative; display: inline-block; flex-shrink: 0; color: #dfaa70; }
+.mark > span { width: 40%; height: 58%; background: currentColor; border-radius: 99px 99px 0 0; position: absolute; top: 0; left: 32%; }
+.mark > i { position: absolute; left: 0; width: 100%; height: 22%; top: 54%; border-top: 2px solid currentColor; border-radius: 55% 65% 0 0; transform: rotate(-5deg); }
+.mark > i:nth-of-type(2) { top: 68%; left: 10%; width: 78%; transform: rotate(4deg); }
+.mark > i:nth-of-type(3) { top: 84%; left: 25%; width: 56%; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: .4rem clamp(1.1rem, 2.6vw, 2.65rem); }
+.site-header nav a { text-decoration: none; font-size: clamp(1rem, 1.5vw, 1.35rem); padding: .45rem 0; }
+.site-header nav a:hover, .draft-footer a:hover { text-decoration: underline; text-underline-offset: .25em; }
+.hero {
+  position: relative; min-height: clamp(36rem, 64vw, 59rem); isolation: isolate; overflow: hidden;
+  background: var(--scene) center / cover no-repeat;
+  padding: clamp(5rem, 10vw, 10rem) 7% 8rem 12.6%;
+}
+.bookshop-studio { --scene: url('bookshop-studio-hero.webp'); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg,#10222068,transparent 64%); }
+.hero::after {
+  content: ""; position: absolute; left: -8%; bottom: -5.55rem; width: 116%; height: 9.4rem;
+  background: var(--paper); border-top: 2px solid var(--copper); border-radius: 47% 54% 0 0 / 36% 58% 0 0;
+  transform: rotate(-1.2deg); pointer-events: none;
+}
+.hero-copy { color: var(--text); max-width: 32rem; }
+.hero h1 { font-size: clamp(2.8rem,4.8vw,5.3rem); line-height: .99; letter-spacing: -.043em; margin: 0; font-weight: 500; }
+.rule { display: block; width: 6rem; height: 2px; margin: 1.55rem 0; background: var(--copper); }
+.cta { display: inline-block; background: var(--accent); color: #fff7e7; text-decoration: none; padding: .85rem 1.65rem; border-radius: .5rem; border: 1px solid #db9b69; box-shadow: 0 3px 8px #0c12133b; font-size: clamp(1.13rem,1.8vw,1.55rem); }
+.cta:hover { filter: brightness(1.15); }
+.collections { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(1rem,2vw,2rem); max-width: 1480px; padding: .65rem clamp(1.2rem,3vw,3.4rem) 0; margin: 0 auto; }
+.card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--copper); border-radius: .95rem; background: #10313a; color: var(--text); text-decoration: none; scroll-margin-top: 1.3rem; transition: transform .18s ease,box-shadow .18s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 22px #0f293540; }
+.product-art { position: relative; display: block; overflow: hidden; aspect-ratio: var(--ratio); }
+.product-art img { position: absolute; width: var(--art-width); max-width: none; height: auto; left: var(--art-left); top: var(--art-top); }
+.card-title { flex: 1; display: grid; place-items: center; text-align: center; min-height: 6.6rem; padding: .8rem .4rem; font-size: clamp(1.35rem,2.8vw,2.75rem); }
+.flourish { display: block; color: #e4ba84; line-height: .6; font-size: 2.4rem; transform: scaleX(1.9); }
+.draft-footer { max-width: 965px; margin-inline: auto; text-align: center; padding: 1.7rem 1.25rem 1.2rem; }
+.signature { display: flex; align-items: center; gap: 1rem; color: #93532d; font-size: 3rem; line-height: 1; }
+.signature::before, .signature::after { content:""; height: 1px; background: var(--copper); flex: 1; }
+.draft-footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem 1.6rem; padding: .95rem 0; font-size: .95rem; }
+
+.cove-workshop { --scene: url('cove-workshop-hero.webp'); --ink:#0c3538; --accent:#07525d; --paper:#f5f0e6; --copper:#47868b; background: linear-gradient(var(--paper) 61%,#e4efec 89%,#c9e1e0); }
+.cove-workshop .site-header { background: #f5f0e6; color: var(--ink); }
+.cove-workshop .wordmark > span:last-child { border-color: #47868b; }
+.cove-workshop .mark { color: #174f57; }
+.cove-workshop .mark > span { display: none; }
+.cove-workshop .hero { padding-left: 6.4%; padding-top: clamp(4rem, 8vw, 8.7rem); }
+.cove-workshop .hero::before { background: linear-gradient(90deg,#fcf9ea82,transparent 62%); }
+.cove-workshop .hero::after { background: linear-gradient(#b4d2d1,#f5f0e6 62%); border-color: #d9e9e4; }
+.cove-workshop .hero-copy { color: var(--ink); max-width: 33rem; }
+.cove-workshop .hero h1 { font-weight: 600; }
+.cove-workshop .rule { width: 8rem; border-radius: 70%; transform: rotate(-3deg); }
+.cove-workshop .cta { border-color: #1d646e; }
+.cove-workshop .card { color: var(--ink); background: var(--paper); border-color: #cec9bb; }
+.cove-workshop .flourish,.cove-workshop .signature { color: #316e73; }
+
+.comparison { min-height: 100vh; background: #f6eedf; }
+.comparison main { max-width: 1250px; padding: 4rem 1.4rem; margin: auto; }
+.comparison h1 { font-size: clamp(2.6rem,6vw,5rem); line-height: 1; margin: 0; font-weight: 500; }
+.comparison p { font-size: 1.2rem; }
+.compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.compare-cards a { display: block; background: #10313a; color: #f9edda; text-decoration: none; border-radius: 1rem; overflow: hidden; }
+.compare-cards a:hover span { text-decoration: underline; }
+.compare-cards img { width: 100%; display: block; aspect-ratio: 3/2; object-fit: cover; }
+.compare-cards span { display: block; padding: 1.1rem; font-size: 1.4rem; }
+
+@media (max-width: 780px) {
+  .site-header { flex-direction: column; justify-content: center; gap: .35rem; }
+  .site-header nav { justify-content: center; }
+  .hero, .cove-workshop .hero { padding: 4.5rem 6% 22rem; min-height: 0; background-position: 60% center; }
+  .hero::before { background: linear-gradient(180deg,#102220df 0%,#1022207d 30%,transparent 72%); }
+  .cove-workshop .hero::before { background: linear-gradient(180deg,#fff9eaf0 0%,#fff9ea94 36%,transparent 75%); }
+  .hero-copy { max-width: 27rem; }
+}
+@media (max-width: 540px) {
+  .hero, .cove-workshop .hero { padding-bottom: 15rem; }
+  .collections,.compare-cards { grid-template-columns: minmax(0,1fr); }
+  .collections { max-width: 440px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card { transition: none; }
+}
+
+.workshop-hero-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background: url('cove-workshop-hero.webp') center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+.product-art .mockup-overlay,.mockup-overlay {
+  left: 0;
+  top: 0;
+  position: absolute;
+  max-width: none;
+  transform-origin: 0 0;
+  visibility: hidden;
+}
+.planner-overlay {
+  clip-path: polygon(0 0, 73% 0, 73% 6%, 89% 6%, 89% 0, 100% 0, 100% 100%, 0 100%);
+}
+.journal-overlay { border-radius: 1% 0 0 1%; }
+
+.workshop-product-photo { display: block; width: 100%; aspect-ratio: 1.1; object-fit: cover; }
+
+.collections:has(> .card:nth-child(2):last-child) { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 1020px; }
+@media (max-width: 540px) { .collections:has(> .card:nth-child(2):last-child) { grid-template-columns: minmax(0,1fr); max-width: 440px; } }
+
+.mockup-overlay[data-desktop-screen] { object-fit: cover; object-position: center top; }
+
+.bookshop-studio { --scene: url('bookshop-studio-hero-natural.webp'); }
+.cove-workshop { --scene: url('cove-workshop-hero-natural.webp'); }
+.cove-lifestyle-photo { display:block; width:100%; aspect-ratio:1.1; object-fit:cover; }

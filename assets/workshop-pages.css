@@ -1,0 +1,53 @@
+:root {
+  --deep: #153a3d;
+  --sea: #18565d;
+  --mist: #d8e9e6;
+  --sage: #3d6259;
+  --sand: #f5f0e6;
+  --paper: #fffdf7;
+  --ink: #15393c;
+  --muted: #4a6261;
+  --line: #d0ddd5;
+  --ochre: #97623f;
+}
+.workshop-inner {
+  color: var(--ink);
+  background: linear-gradient(180deg,#f7f4ec 0%,#f7f4ec 65%,#e1eeeb 100%);
+  font-family: system-ui, sans-serif;
+}
+.workshop-inner .site-header,.workshop-inner .draft-footer { font-family: Georgia,'Times New Roman',serif; }
+.workshop-inner h1,.workshop-inner h2,.workshop-inner h3 { color: var(--deep); font-family: Georgia,'Times New Roman',serif; }
+.workshop-inner h1 { line-height: 1.04; }
+.workshop-inner main { min-height: 55vh; }
+.workshop-inner .workshop-intro {
+  margin-top: clamp(1.5rem,4vw,3rem);
+  margin-bottom: clamp(1.5rem,3vw,2.4rem);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(1.5rem,5vw,3.5rem);
+  background: linear-gradient(110deg,#fdf9ec,#e3efeb);
+}
+.workshop-inner .download-card,.workshop-inner .book-card,.workshop-inner .article-card {
+  border-color: var(--line);
+  background-color: var(--paper);
+}
+.workshop-inner .section-soft,.workshop-inner .facts { background-color: #e4efeb; }
+.workshop-inner .draft-footer { clear: both; margin-top: 1rem; }
+.workshop-inner .draft-footer nav + nav { padding-top: 0; }
+@media(max-width:600px) {
+  .workshop-inner .workshop-intro { border-radius: 0; }
+}
+.workshop-inner .site-header { box-shadow: 0 4px 16px #10323a12; }
+.workshop-inner .download-card,.workshop-inner .library-card,.workshop-inner .post-card {
+  background-color: var(--paper);
+  border-color: var(--line);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px #16383b0d;
+}
+.workshop-inner .download-card { overflow: hidden; }
+.workshop-inner .draft-footer {
+  padding-top: 2.2rem;
+  background: linear-gradient(180deg,transparent,#d5e8e3);
+  max-width: none;
+}
+.workshop-inner .draft-footer .signature { max-width: 920px; margin-inline: auto; }
