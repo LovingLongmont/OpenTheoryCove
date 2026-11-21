@@ -1,0 +1,19 @@
+# Open Theory Cove
+
+> Open Theory Cove is an online bookshop and creative studio offering books, guided journals, sketchbooks, planners, logbooks, genealogy resources, free digital downloads, and CoveScapes browser homepages.
+
+Website: https://opentheorycove.com/
+
+## Collections
+- [Books](https://opentheorycove.com/books.html)
+- [Journals](https://opentheorycove.com/journals.html)
+- [Genealogy](https://opentheorycove.com/genealogy.html)
+- [Planners and Logbooks](https://opentheorycove.com/planners-logbooks.html)
+- [CoveScapes browser homepages](https://opentheorycove.com/covescapes.html)
+- [Free digital downloads](https://opentheorycove.com/digital-downloads.html)
+
+## More information
+- [Contact](https://opentheorycove.com/contact.html)
+- [XML sitemap](https://opentheorycove.com/sitemap.xml)
+
+Product availability, prices, and download conditions should be verified on the relevant product page. Free downloads are intended for personal use, not resale.
