@@ -1,0 +1,48 @@
+.gator-gallery .gallery-thumbs img {
+  object-fit: contain;
+}
+.gator-gallery .gallery-thumbs span {
+  display: block;
+  padding: .25rem;
+  font-size: .875rem;
+  line-height: 1.25;
+}
+.gator-gallery .gallery-thumbs button {
+  min-width: 0;
+}
+.gator-gallery [data-enlarge] {
+  display: block;
+  cursor: zoom-in;
+}
+.gator-gallery dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(94vw, 980px);
+  max-height: 92dvh;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: white;
+  overflow: auto;
+}
+.gator-gallery dialog::backdrop {
+  background: rgb(0 0 0 / 75%);
+}
+.gator-gallery dialog form {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: .5rem;
+}
+.gator-gallery dialog button {
+  padding: .4rem .8rem;
+  cursor: pointer;
+}
+.gator-gallery dialog img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
