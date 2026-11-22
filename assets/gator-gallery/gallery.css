@@ -1,20 +1,51 @@
-.gator-gallery .gallery-thumbs img {
-  object-fit: contain;
+#look-inside {
+  scroll-margin-top: 6rem;
 }
-.gator-gallery .gallery-thumbs span {
+.journal-use-scene {
+  margin: 1rem 0 1.5rem;
+}
+.journal-use-scene img {
   display: block;
-  padding: .25rem;
-  font-size: .875rem;
-  line-height: 1.25;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
-.gator-gallery .gallery-thumbs button {
-  min-width: 0;
+.journal-use-scene figcaption,
+.gator-preview-grid figcaption {
+  margin-top: .5rem;
 }
-.gator-gallery [data-enlarge] {
+.gator-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 860px;
+}
+.gator-preview-grid figure {
+  margin: 0;
+}
+.gator-preview-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+.gator-preview-grid figcaption {
+  font-weight: 650;
+}
+.gator-buy-again {
+  margin-top: 1.75rem;
+}
+@media (max-width: 640px) {
+  .gator-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.journal-product [data-enlarge] {
   display: block;
   cursor: zoom-in;
 }
-.gator-gallery dialog {
+.gator-image-dialog {
   position: fixed;
   inset: 0;
   margin: auto;
@@ -26,29 +57,28 @@
   background: white;
   overflow: auto;
 }
-.gator-gallery dialog::backdrop {
+.gator-image-dialog::backdrop {
   background: rgb(0 0 0 / 75%);
 }
-.gator-gallery dialog form {
+.gator-image-dialog form {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: flex-end;
   margin-bottom: .5rem;
 }
-.gator-gallery dialog button {
+.gator-image-dialog button {
   padding: .4rem .8rem;
   cursor: pointer;
 }
-.gator-gallery dialog img {
+.gator-image-dialog img {
   display: block;
   max-width: 100%;
   height: auto;
   margin-inline: auto;
 }
 
-.gator-description .gator-grid,
-.gator-description .faq-wrap {
+.gator-description .gator-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
@@ -58,8 +88,7 @@
   border-top: 2px solid #9ebbb0;
   padding-top: 1rem;
 }
-.gator-description .gator-card h3,
-.gator-description .faq-wrap h3 {
+.gator-description .gator-card h3 {
   font-size: 1.3rem;
 }
 .gator-description .update-box,
@@ -88,7 +117,6 @@
 }
 @media (max-width: 650px) {
   .gator-description .gator-grid,
-  .gator-description .faq-wrap,
   .gator-description .compare {
     grid-template-columns: 1fr;
   }
