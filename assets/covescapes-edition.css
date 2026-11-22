@@ -36,3 +36,5 @@
 .cove-edition-lightbox img { width:100%; max-height:65dvh; object-fit:contain; }
 .cove-edition-lightbox button { min-height:44px; min-width:44px; border:1px solid #b39171; border-radius:.4rem; background:#fff5e6; color:#263238; padding:.4rem .7rem; font:inherit; cursor:pointer; }
 .cove-edition-lightbox button:focus-visible { outline:3px solid #f0bb7f; outline-offset:2px; }
+
+.cove-preview-trigger { display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; }

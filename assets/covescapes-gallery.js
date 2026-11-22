@@ -1,24 +1,26 @@
 (() => {
   const previews = Array.from(document.querySelectorAll('[data-cove-edition-preview]'));
   const dialog = document.getElementById('cove-edition-lightbox');
-  if (typeof dialog.showModal !== 'function' || !previews.length) return;
+  if (!dialog || typeof dialog.showModal !== 'function' || !previews.length) return;
   const image = dialog.querySelector('img');
   const caption = dialog.querySelector('figcaption');
+  const source = (preview) => preview.href || preview.querySelector('img').src;
+  const images = [...new Map(previews.map((preview) => [source(preview), preview])).values()];
   let current = 0;
   let opener;
   function show(index) {
-    current = (index + previews.length) % previews.length;
-    const link = previews[current];
-    image.src = link.href;
+    current = (index + images.length) % images.length;
+    const link = images[current];
+    image.src = source(link);
     image.alt = link.querySelector('img').alt;
-    const label = link.closest('figure').querySelector('figcaption').textContent.trim();
-    caption.textContent = (current + 1) + ' / ' + previews.length + ' · ' + label;
+    const label = link.closest('figure')?.querySelector('figcaption')?.textContent.trim() || image.alt;
+    caption.textContent = (current + 1) + ' / ' + images.length + ' · ' + label;
   }
-  previews.forEach((link, index) => link.addEventListener('click', (event) => {
+  previews.forEach((link) => link.addEventListener('click', (event) => {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     opener = link;
-    show(index);
+    show(images.findIndex((preview) => source(preview) === source(link)));
     dialog.showModal();
   }));
   dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
