@@ -9,6 +9,13 @@
   gtag('config', 'G-PZHVJF6365');
 </script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CoveScapes | Open Theory Cove</title><link rel="stylesheet" href="/assets/workshop-product-base.css">
 <style>.download-grid,.download-hero{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-items:start}.download-card{background:white;border:1px solid var(--line);padding:24px}.download-card{display:flex;flex-direction:column}.download-card h2{font-size:28px}.download-card .product-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:14px}.download-card .product-actions .button{white-space:nowrap}.header-nav{gap:14px!important}.header-inner{flex-wrap:wrap}.section p,.section li{line-height:1.7}@media(max-width:800px){.download-grid,.download-hero{grid-template-columns:1fr}}</style><link rel="stylesheet" href="/assets/drafts.css"><link rel="stylesheet" href="/assets/workshop-pages.css"><link rel="stylesheet" href="/assets/studio.css"><link rel="canonical" href="https://opentheorycove.com/covescapes.html">
+<style>
+.edition-heart { display:inline-flex; gap:.45rem; align-items:center; align-self:flex-start; min-height:44px; padding:.35rem .85rem; margin-top:auto; border:1px solid #b98885; border-radius:999px; background:#fffaf6; color:#79313e; cursor:pointer; font:inherit; }
+.edition-heart[hidden] { display:none; }
+.edition-heart:hover,.edition-heart[aria-pressed="true"] { background:#f7e2e5; }
+.edition-heart:focus-visible { outline:2px solid #79313e; outline-offset:3px; }
+.edition-heart-icon { font-size:1.45em; line-height:1; }
+</style>
 </head>
 <body class="bookshop-studio workshop-inner"><a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
@@ -34,26 +41,31 @@
 <img src="/assets/bear-creek-mountain-retreat-desktop-preview.webp" alt="Desktop monitor mockup of the Bear Creek Mountain Retreat browser homepage" width="1440" height="900" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px">
 <h3>Bear Creek Mountain Retreat</h3>
 <p>A mountain hideaway with bears, creekside scenery, and quick access to everyday links.</p>
+<button type="button" class="edition-heart" data-heart="bear_creek" aria-label="Heart Bear Creek Mountain Retreat" aria-pressed="false" hidden><span class="edition-heart-icon" aria-hidden="true">♡</span> <span>Heart</span></button>
 </article>
 <article class="download-card">
 <img src="/assets/elephant-haven-desktop-preview.webp" alt="Desktop monitor mockup of the Elephant Haven browser homepage" width="1440" height="900" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px">
 <h3>Elephant Haven</h3>
 <p>A savannah-inspired desktop start page with elephants and organized website shortcuts.</p>
+<button type="button" class="edition-heart" data-heart="elephant_haven" aria-label="Heart Elephant Haven" aria-pressed="false" hidden><span class="edition-heart-icon" aria-hidden="true">♡</span> <span>Heart</span></button>
 </article>
 <article class="download-card">
 <img src="/assets/iron-and-ember-desktop-preview.webp" alt="Desktop monitor mockup of the Iron &amp; Ember browser homepage" width="1440" height="900" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px">
 <h3>Iron &amp; Ember</h3>
 <p>An amber-lit salvage yard with industrial artwork and illustrated website categories.</p>
+<button type="button" class="edition-heart" data-heart="iron_and_ember" aria-label="Heart Iron &amp; Ember" aria-pressed="false" hidden><span class="edition-heart-icon" aria-hidden="true">♡</span> <span>Heart</span></button>
 </article>
 <article class="download-card">
 <img src="/assets/lotus-reverie-desktop-preview.webp" alt="Desktop monitor mockup of the Lotus Reverie browser homepage" width="1440" height="900" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px">
 <h3>Lotus Reverie</h3>
 <p>A jewel-toned painted elephant beside an indigo lotus pond.</p>
+<button type="button" class="edition-heart" data-heart="lotus_reverie" aria-label="Heart Lotus Reverie" aria-pressed="false" hidden><span class="edition-heart-icon" aria-hidden="true">♡</span> <span>Heart</span></button>
 </article>
 <article class="download-card">
 <img src="/assets/midnight-whiskers-desktop-preview.webp" alt="Desktop monitor mockup of the Midnight Whiskers browser homepage" width="1440" height="900" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px">
 <h3>Midnight Whiskers</h3>
 <p>A curious black kitten peeks into a lamplit room on a rainy night.</p>
+<button type="button" class="edition-heart" data-heart="midnight_whiskers" aria-label="Heart Midnight Whiskers" aria-pressed="false" hidden><span class="edition-heart-icon" aria-hidden="true">♡</span> <span>Heart</span></button>
 </article>
 </div>
 </section>
@@ -61,4 +73,30 @@
   <div class="signature" aria-hidden="true"><span>∿</span></div>
   <nav aria-label="Footer navigation"><a href="./">Home</a><a href="journals.html">Journals</a><a href="genealogy.html">Genealogy</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="search.html">Search</a><a href="sitemap.html">Site map</a><a href="covescapes.html">CoveScapes</a><a href="digital-downloads.html">Free Digital Downloads</a><a href="books.html">Books</a><a href="planners-logbooks.html">Planners &amp; Logbooks</a><a href="https://www.facebook.com/profile.php?id=61573555714643">Facebook</a></nav>
 </footer>
+<script>
+document.querySelectorAll('#coming-soon [data-heart]').forEach((button) => {
+  const edition = button.dataset.heart;
+  const key = 'otc:covescapes:heart:' + edition;
+  const icon = button.querySelector('.edition-heart-icon');
+  let hearted = false;
+  try { hearted = localStorage.getItem(key) === '1'; } catch {}
+  const render = () => {
+    button.setAttribute('aria-pressed', String(hearted));
+    icon.textContent = hearted ? '♥' : '♡';
+  };
+  render();
+  button.addEventListener('click', () => {
+    hearted = !hearted;
+    try {
+      if (hearted) localStorage.setItem(key, '1');
+      else localStorage.removeItem(key);
+    } catch {}
+    render();
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', (hearted ? 'cove_heart_' : 'cove_unheart_') + edition);
+    }
+  });
+  button.hidden = false;
+});
+</script>
 </body></html>
