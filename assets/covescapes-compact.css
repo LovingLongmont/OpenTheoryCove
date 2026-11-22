@@ -1,0 +1,67 @@
+/* CoveScapes catalog and product pages */
+.bookshop-studio.covescapes-page .studio-inner-banner {
+  height: auto;
+  min-height: clamp(8rem, 17vw, 13rem);
+}
+.bookshop-studio.covescapes-page .studio-banner-copy {
+  width: min(85%, 44rem);
+  padding-block: clamp(1rem, 2.5vw, 1.75rem);
+}
+.bookshop-studio.covescapes-page .studio-banner-copy h1 {
+  font-size: clamp(1.8rem, 4vw, 3.65rem);
+}
+
+.covescapes-page main > .container.section {
+  padding-block: clamp(1.15rem, 2.6vw, 2rem);
+}
+.covescapes-page main > .container.section + .container.section {
+  padding-top: clamp(.65rem, 1.5vw, 1.15rem);
+}
+.covescapes-page main :is(h2, h3) {
+  margin-block: .65em .35em;
+}
+.covescapes-page main :is(p, ul, dl) {
+  margin-block: 0 .75rem;
+}
+.covescapes-page main li + li {
+  margin-top: .3rem;
+}
+.covescapes-page main nav[aria-label="On this page"] {
+  margin-bottom: .85rem;
+  line-height: 1.8;
+}
+.covescapes-page main .download-grid {
+  gap: clamp(.9rem, 2vw, 1.35rem);
+}
+.covescapes-page main .download-card {
+  padding: clamp(1rem, 2vw, 1.3rem);
+}
+.covescapes-page main .download-card .product-actions {
+  padding-top: .4rem;
+}
+.covescapes-page main .cove-product-intro {
+  gap: clamp(.8rem, 2vw, 1.5rem);
+  margin-block: .65rem 1rem;
+}
+.covescapes-page main :is([aria-labelledby="cove-workday"], [aria-labelledby="cove-gift"]) .cove-product-intro {
+  margin-bottom: 0;
+}
+.covescapes-page main [aria-labelledby="cove-instructions"] dl {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) minmax(0, 1fr);
+  gap: .65rem 1.25rem;
+}
+.covescapes-page main [aria-labelledby="cove-instructions"] dd {
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .bookshop-studio.covescapes-page .studio-inner-banner {
+    min-height: 7.25rem;
+  }
+  .covescapes-page main [aria-labelledby="cove-instructions"] dl {
+    display: block;
+  }
+  .covescapes-page main [aria-labelledby="cove-instructions"] dd {
+    margin-bottom: .8rem;
+  }
+}
