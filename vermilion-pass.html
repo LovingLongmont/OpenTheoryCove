@@ -35,6 +35,16 @@
   .vermilion-thumbs { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 </style>
+<style>
+.vermilion-detail .vermilion-lede { font: 1.3rem/1.35 Georgia, serif; }
+.vermilion-lightbox { width:min(70rem, 94vw); max-height:94dvh; overflow:auto; padding:clamp(.65rem, 2vw, 1.2rem); border:1px solid #b39171; border-radius:.65rem; background:#151a20; color:#fff5e6; }
+.vermilion-lightbox::backdrop { background:rgb(8 13 16 / 86%); }
+.vermilion-lightbox header,.vermilion-lightbox nav { display:flex; align-items:center; justify-content:space-between; gap:.5rem; }
+.vermilion-lightbox figure { margin:.65rem 0; }
+.vermilion-lightbox img { width:100%; max-height:65dvh; object-fit:contain; }
+.vermilion-lightbox button { min-height:44px; min-width:44px; border:1px solid #b39171; border-radius:.4rem; background:#fff5e6; color:#263238; padding:.4rem .7rem; font:inherit; cursor:pointer; }
+.vermilion-lightbox button:focus-visible { outline:3px solid #f0bb7f; outline-offset:2px; }
+</style>
 </head>
 <body class="bookshop-studio workshop-inner covescapes-page"><a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
@@ -43,26 +53,26 @@
 </header>
 
 <main id="main" class="vermilion-detail">
-<div class="studio-inner-banner"><div class="studio-banner-copy"><h1>Vermilion Pass</h1></div></div>
 <div class="container vermilion-content">
 <nav class="vermilion-crumbs" aria-label="Breadcrumb"><a href="./">Home</a> › <a href="covescapes.html">CoveScapes</a> › Vermilion Pass</nav>
 <section class="vermilion-intro" aria-labelledby="vermilion-intro-title">
-<figure><a href="/assets/vermilion-pass-christmas-editorial.webp"><img src="/assets/vermilion-pass-christmas-editorial.webp" width="1440" height="960" alt="Vermilion Pass Christmas gift preview with the painted elephant on a desktop monitor, editable shortcuts, 28 illustrated categories and no shipping fees" fetchpriority="high"></a></figure>
 <div><span class="kicker">Customizable desktop browser homepage</span>
-<h2 id="vermilion-intro-title">Your workday, with a view of the canyon</h2>
+<h1 id="vermilion-intro-title">Vermilion Pass</h1>
+<p class="vermilion-lede">Your workday, with a view of the canyon.</p>
 <p>Vermilion Pass gives you one place to open the sites you use most. Set your own website, shop dashboard, design tools, and social accounts a click away, with a painted elephant and a glowing canyon river as your backdrop.</p>
 <ul><li>Seven editable quick shortcuts and Google search</li><li>28 illustrated categories, with 12 shown at first</li><li>Editable title and quote, plus JSON backup and restore</li><li>Digital ZIP for desktop and laptop browsers</li></ul>
 <div class="vermilion-actions"><button type="button" class="button button-primary" disabled>Etsy · Coming Soon</button><a href="#cove-workday">See it in use ↓</a></div>
 <p><a href="covescapes.html#release-newsletter">Notify me when it’s available</a></p>
 </div>
+<figure><a href="/assets/vermilion-pass-christmas-editorial.webp"><img src="/assets/vermilion-pass-christmas-editorial.webp" width="1440" height="960" alt="Vermilion Pass Christmas gift preview with the painted elephant on a desktop monitor, editable shortcuts, 28 illustrated categories and no shipping fees" fetchpriority="high"></a></figure>
 </section>
 <section aria-labelledby="cove-workday">
 <h2 id="cove-workday">See it in use</h2>
 <figure><a href="/assets/vermilion-pass-canyon-workspace.webp"><img class="vermilion-scene" src="/assets/vermilion-pass-canyon-workspace.webp" width="1440" height="960" alt="Vermilion Pass on a monitor in a warm desert studio overlooking sandstone cliffs" loading="lazy" decoding="async"></a><figcaption>Desktop mockup in a canyon-view workspace.</figcaption></figure>
 <div class="vermilion-thumbs">
-<figure><a href="/assets/vermilion-pass-screen-homepage.webp"><img src="/assets/vermilion-pass-screen-homepage.webp" width="960" height="540" alt="Homepage and quick shortcuts illustrated screen preview" loading="lazy" decoding="async"></a><figcaption>Homepage and quick shortcuts</figcaption></figure>
-<figure><a href="/assets/vermilion-pass-screen-categories.webp"><img src="/assets/vermilion-pass-screen-categories.webp" width="960" height="540" alt="Category and website editor illustrated screen preview" loading="lazy" decoding="async"></a><figcaption>Category and website editor</figcaption></figure>
-<figure><a href="/assets/vermilion-pass-screen-backup.webp"><img src="/assets/vermilion-pass-screen-backup.webp" width="960" height="540" alt="Backup and restore illustrated screen preview" loading="lazy" decoding="async"></a><figcaption>Backup and restore</figcaption></figure>
+<figure><a href="/assets/vermilion-pass-screen-homepage.webp" data-vermilion-preview><img src="/assets/vermilion-pass-screen-homepage.webp" width="960" height="540" alt="Homepage and quick shortcuts illustrated screen preview" loading="lazy" decoding="async"></a><figcaption>Homepage and quick shortcuts</figcaption></figure>
+<figure><a href="/assets/vermilion-pass-screen-categories.webp" data-vermilion-preview><img src="/assets/vermilion-pass-screen-categories.webp" width="960" height="540" alt="Category and website editor illustrated screen preview" loading="lazy" decoding="async"></a><figcaption>Category and website editor</figcaption></figure>
+<figure><a href="/assets/vermilion-pass-screen-backup.webp" data-vermilion-preview><img src="/assets/vermilion-pass-screen-backup.webp" width="960" height="540" alt="Backup and restore illustrated screen preview" loading="lazy" decoding="async"></a><figcaption>Backup and restore</figcaption></figure>
 </div></section>
 <section aria-labelledby="vermilion-uses"><h2 id="vermilion-uses">What can you use it for?</h2>
 <div class="vermilion-use-grid">
@@ -95,4 +105,51 @@
   <div class="signature" aria-hidden="true"><span>∿</span></div>
   <nav aria-label="Footer navigation"><a href="./">Home</a><a href="journals.html">Journals</a><a href="genealogy.html">Genealogy</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="search.html">Search</a><a href="sitemap.html">Site map</a><a href="covescapes.html">CoveScapes</a><a href="digital-downloads.html">Free Digital Downloads</a><a href="books.html">Books</a><a href="planners-logbooks.html">Planners &amp; Logbooks</a><a href="https://www.facebook.com/profile.php?id=61573555714643">Facebook</a></nav>
 </footer>
+<dialog class="vermilion-lightbox" id="vermilion-lightbox" aria-labelledby="vermilion-lightbox-title">
+<header><strong id="vermilion-lightbox-title">Vermilion Pass screen previews</strong><button type="button" data-close autofocus>Close ×</button></header>
+<figure><img alt=""><figcaption id="vermilion-lightbox-caption" aria-live="polite"></figcaption></figure>
+<nav aria-label="Preview navigation"><button type="button" data-previous aria-label="Previous image">← Previous</button><button type="button" data-next aria-label="Next image">Next →</button></nav>
+</dialog>
+<script>
+(() => {
+  const previews = Array.from(document.querySelectorAll('[data-vermilion-preview]'));
+  const dialog = document.getElementById('vermilion-lightbox');
+  if (typeof dialog.showModal !== 'function' || !previews.length) return;
+  const image = dialog.querySelector('img');
+  const caption = dialog.querySelector('figcaption');
+  let current = 0;
+  let opener;
+  function show(index) {
+    current = (index + previews.length) % previews.length;
+    const link = previews[current];
+    image.src = link.href;
+    image.alt = link.querySelector('img').alt;
+    const label = link.closest('figure').querySelector('figcaption').textContent.trim();
+    caption.textContent = (current + 1) + ' / ' + previews.length + ' · ' + label;
+  }
+  previews.forEach((link, index) => link.addEventListener('click', (event) => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    opener = link;
+    show(index);
+    dialog.showModal();
+  }));
+  dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
+  dialog.querySelector('[data-previous]').addEventListener('click', () => show(current - 1));
+  dialog.querySelector('[data-next]').addEventListener('click', () => show(current + 1));
+  dialog.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      show(current + (event.key === 'ArrowLeft' ? -1 : 1));
+    }
+  });
+  dialog.addEventListener('click', (event) => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+  dialog.addEventListener('close', () => opener?.focus());
+})();
+</script>
 </body></html>
