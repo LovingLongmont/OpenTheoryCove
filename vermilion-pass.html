@@ -18,7 +18,8 @@
 .vermilion-detail figure { margin:0; }
 .vermilion-detail img { width:100%; height:auto; border-radius:.55rem; }
 .vermilion-detail figcaption { margin-top:.45rem; font-size:.88rem; }
-.vermilion-detail .vermilion-actions { display:flex; align-items:center; gap:.8rem; flex-wrap:wrap; margin-block:1rem .55rem; }
+.vermilion-detail .vermilion-actions { display:flex; align-items:center; gap:.55rem; flex-wrap:wrap; margin-block:1rem .55rem; }
+.vermilion-detail .vermilion-actions .button { min-height:44px; padding:.65rem .8rem; white-space:nowrap; }
 .vermilion-detail button[disabled] { cursor:default; opacity:.82; }
 .vermilion-scene { max-width:52rem; }
 .vermilion-thumbs,.vermilion-use-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(.65rem,2vw,1.15rem); }
@@ -64,8 +65,7 @@
 </div>
 <div class="vermilion-intro-media">
 <figure><a href="/assets/vermilion-pass-christmas-editorial.webp"><img src="/assets/vermilion-pass-christmas-editorial.webp" width="1440" height="960" alt="Vermilion Pass Christmas gift preview with the painted elephant on a desktop monitor, editable shortcuts, 28 illustrated categories and no shipping fees" fetchpriority="high"></a></figure>
-<div class="vermilion-actions"><button type="button" class="button button-primary" disabled>Etsy · Coming Soon</button><a href="#cove-workday">See it in use ↓</a></div>
-<p><a href="covescapes.html#release-newsletter">Notify me when it’s available</a></p>
+<div class="vermilion-actions"><button type="button" class="button button-primary" disabled>Etsy · Coming Soon</button><a class="button button-primary" href="#cove-workday">See it in use ↓</a><a class="button button-primary" href="covescapes.html#release-newsletter" aria-label="Notify me when Vermilion Pass is available">Notify me</a></div>
 </div>
 </section>
 <section aria-labelledby="cove-workday">
