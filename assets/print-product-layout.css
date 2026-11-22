@@ -1,0 +1,50 @@
+.journal-product .product .buybox .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+}
+.journal-product .product .buybox .note {
+  margin-block: 1rem;
+}
+.journal-product .print-use-scene {
+  margin: 1rem 0 1.5rem;
+}
+.journal-product .print-use-scene img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.journal-product .print-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.journal-product .print-preview-grid figure {
+  margin: 0;
+}
+.journal-product .print-preview-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+.journal-product .print-preview-grid figcaption,
+.journal-product .print-use-scene figcaption {
+  margin-top: .5rem;
+}
+.journal-product .print-alternate-cover {
+  margin-top: 1rem;
+}
+.journal-product .print-alternate-cover figure {
+  max-width: 12rem;
+}
+.journal-product section[id] {
+  scroll-margin-top: 6rem;
+}
+@media (max-width: 640px) {
+  .journal-product .print-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
