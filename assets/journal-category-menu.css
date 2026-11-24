@@ -1,0 +1,61 @@
+.journal-category-menu {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  width: min(94%, 1240px);
+  margin: clamp(30px, 5vw, 64px) auto;
+}
+
+.journal-category-menu .journal-category-tile {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #bca486;
+  border-radius: 12px;
+  background: #103039;
+  color: #f7efdf;
+  text-align: center;
+  text-decoration: none;
+  scroll-margin-top: 110px;
+}
+
+.journal-category-menu .journal-category-tile:hover,
+.journal-category-menu .journal-category-tile:focus-visible {
+  box-shadow: 0 0 0 3px #b87946;
+}
+
+.journal-category-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 10 / 9;
+  object-fit: contain;
+  padding: 16px;
+  box-sizing: border-box;
+  background: radial-gradient(ellipse at top left, #eddcc0, #b39471);
+}
+
+.journal-category-tile.journal-category-lifestyle img {
+  object-fit: cover;
+  padding: 0;
+}
+
+.journal-category-tile > span {
+  flex: 1;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  padding: 15px 8px 11px;
+  font: clamp(18px, 2.2vw, 34px)/1.12 Georgia, serif;
+}
+
+.journal-tile-flourish {
+  color: #e6b983;
+  font-size: 1.2em;
+}
+
+@media (max-width: 730px) {
+  .journal-category-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
