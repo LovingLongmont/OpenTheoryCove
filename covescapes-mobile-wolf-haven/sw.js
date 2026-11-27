@@ -1,7 +1,7 @@
 'use strict';
 
 const prefix = 'wolf-haven-mobile:' + self.registration.scope + ':';
-const version = prefix + '1';
+const version = prefix + '2';
 const shell = [
   './index.html','./style.css','./defaults.js','./app.js','./manifest.webmanifest',
   './assets/moonlit-wolf.webp','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png'

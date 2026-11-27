@@ -174,6 +174,7 @@ function iconButton(icon, label, action, selected = false) {
 
 function inputField(label, input) {
   const wrapper = el('label',label,'field');
+  if (label) input.setAttribute('aria-label',label);
   wrapper.append(input);
   return wrapper;
 }
