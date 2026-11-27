@@ -58,7 +58,23 @@
     object-fit: contain;
     object-position: top center;
   }
-  .home-christmas p { text-align: center; }
+  .home-christmas .home-christmas-button {
+    display: block;
+    padding: 0.65rem 0.8rem;
+    border: 2px solid #cda65c;
+    border-radius: 0.7rem;
+    background: linear-gradient(145deg, #8b2437, #602031);
+    color: #fff5dc;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.35;
+    box-shadow: inset 0 0 0 2px #602031, 0 2px 5px #39151d33;
+  }
+  .home-christmas .home-christmas-button:hover { background: #9a2940; color: #fff5dc; }
+  .home-christmas .home-christmas-button:focus-visible {
+    outline: 2px solid #19363b;
+    outline-offset: 3px;
+  }
   @media (max-width: 800px) {
     .home-intro { grid-template-columns: 1fr; }
     .home-christmas-image img { position: static; height: auto; }
@@ -91,7 +107,10 @@
       <a class="home-christmas-image" href="https://www.etsy.com/listing/4623526676/customizable-desktop-start-page-midnight">
         <img src="/assets/midnight-whiskers-homepage-christmas.webp" width="1200" height="800" decoding="async" alt="Midnight Whiskers black cat browser homepage, a customizable desktop start page and Christmas gift for black cat lovers">
       </a>
-      <p><a href="https://www.etsy.com/listing/4623526676/customizable-desktop-start-page-midnight"><strong>Midnight Whiskers is on sale on Etsy through December 25, 2026.</strong></a></p>
+      <a class="home-christmas-button" href="https://www.etsy.com/listing/4623526676/customizable-desktop-start-page-midnight">
+        <strong><span aria-hidden="true">❄ </span>Midnight Whiskers is on sale on Etsy<span aria-hidden="true"> ❄</span></strong><br>
+        through December 25, 2026.
+      </a>
     </aside>
   </section>
   <section class="collections" id="collections" aria-label="Shop collections">
