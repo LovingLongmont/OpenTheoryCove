@@ -22,6 +22,9 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
 .cove-sign-in-fields input{flex:1 1 240px;max-width:100%;min-width:0;padding:10px 12px;border:1px solid #9aa8a5;border-radius:5px;font:inherit}
 .cove-download-access [hidden]{display:none}
 #cove-download-status:not(:empty){margin:12px 0 0}
+#cove-fulfillment{margin-top:20px;border-top:1px solid var(--line,#dedbd2);padding-top:16px}
+#cove-fulfillment input:not([type=checkbox]){display:block;width:min(100%,420px);padding:8px;margin-top:4px;font:inherit}
+#cove-fulfillment-form label{margin:0 0 12px}
 </style>
 <link rel="stylesheet" href="/assets/covescapes-edition.css">
 </head>
@@ -41,7 +44,7 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
 
     <section class="cove-download-access" aria-labelledby="cove-sign-in-title">
       <h3 id="cove-sign-in-title">Sign in to download</h3>
-      <p id="cove-sign-in-instructions">Enter the email you used at Square checkout. We’ll send a sign-in link to unlock your designs for this visit.</p>
+      <p id="cove-sign-in-instructions">After you pay through Square, Open Theory Cove will email a sign-in link to the address you used at checkout. Use that link to unlock your ZIPs for the visit. If you need a new link, contact Open Theory Cove.</p>
       <form id="cove-download-sign-in" aria-describedby="cove-sign-in-instructions">
         <label for="cove-download-email">Email address</label>
         <div class="cove-sign-in-fields">
@@ -51,6 +54,22 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
       </form>
       <button type="button" id="cove-download-sign-out" class="button button-outline" hidden>Sign out</button>
       <p id="cove-download-status" role="status"></p>
+      <section id="cove-fulfillment" aria-labelledby="cove-fulfillment-title" hidden>
+        <h4 id="cove-fulfillment-title">Grant customer access</h4>
+        <p>Confirm the completed $49.95 CoveScapes payment in Square, then use the buyer’s checkout email and payment reference below.</p>
+        <form id="cove-fulfillment-form">
+          <label>Buyer email <input name="buyer" type="email" required maxlength="254"></label>
+          <label>Square payment reference <input name="payment" required maxlength="128" autocomplete="off"></label>
+          <label><input name="confirmed" type="checkbox" required> I verified this completed collection payment in Square.</label>
+          <button type="submit" class="button button-primary">Save access and create sign-in link</button>
+        </form>
+        <p id="cove-fulfillment-status" role="status"></p>
+        <div id="cove-fulfillment-link" hidden>
+          <label for="cove-customer-link">Customer sign-in link</label>
+          <input id="cove-customer-link" readonly>
+          <a class="button button-outline" id="cove-customer-draft">Open customer email draft</a>
+        </div>
+      </section>
     </section>
     <ul class="collection-previews" aria-label="Designs in the download collection">
       <li><a href="/assets/aurora-ridge-holiday-listing.svg" data-cove-edition-preview aria-label="View Aurora Ridge Christmas preview"><img src="/assets/aurora-ridge-holiday-listing.svg" alt="Aurora Ridge browser homepage on a monitor in a Christmas scene" loading="lazy" decoding="async"></a><div class="collection-preview-details"><h3>Aurora Ridge</h3><button type="button" class="button button-primary" disabled aria-label="Download Aurora Ridge ZIP" data-zip="Aurora-Ridge-CoveScapes-Browser-Homepage(1).zip">Download ZIP</button></div></li>
@@ -103,6 +122,12 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
   const status = document.getElementById('cove-download-status');
   const out = document.getElementById('cove-download-sign-out');
   const buttons = [...document.querySelectorAll('[data-zip]')];
+  const fulfillment = document.getElementById('cove-fulfillment');
+  const fulfillmentForm = document.getElementById('cove-fulfillment-form');
+  const fulfillmentStatus = document.getElementById('cove-fulfillment-status');
+  const linkArea = document.getElementById('cove-fulfillment-link');
+  const customerLink = document.getElementById('cove-customer-link');
+  const customerDraft = document.getElementById('cove-customer-draft');
   const fragment = new URLSearchParams(location.hash.slice(1));
   if (fragment.has('access_token') || fragment.has('error')) {
     history.replaceState(null, '', location.pathname + location.search);
@@ -122,11 +147,16 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
     token = null;
     buttons.forEach(button => button.disabled = true);
     out.hidden = true;
+    fulfillment.hidden = true;
+    linkArea.hidden = true;
+    customerLink.value = '';
+    customerDraft.removeAttribute('href');
     form.hidden = false;
     status.textContent = message;
   }
   if (token) {
-    deliver({action:'access'}).then(() => {
+    deliver({action:'access'}).then(access => {
+      fulfillment.hidden = access.owner !== true;
       buttons.forEach(button => button.disabled = false);
       form.hidden = true;
       out.hidden = false;
@@ -150,6 +180,31 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
   });
   window.addEventListener('pageshow', event => {
     if (event.persisted) reset('Sign in again to start a new visit.');
+  });
+  fulfillmentForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    const button = fulfillmentForm.querySelector('button');
+    button.disabled = true;
+    linkArea.hidden = true;
+    customerLink.value = '';
+    customerDraft.removeAttribute('href');
+    fulfillmentStatus.textContent = 'Saving access…';
+    try {
+      const result = await deliver({action:'grant', email:fulfillmentForm.elements.buyer.value,
+        payment:fulfillmentForm.elements.payment.value, confirmed:fulfillmentForm.elements.confirmed.checked});
+      if (!token) return;
+      customerLink.value = result.link;
+      const body = 'Thank you for purchasing the CoveScapes collection.\n\nOpen this one-time sign-in link to download your designs:\n'
+        + result.link + '\n\nIf you need a new link on a later visit, reply to this email.\n\nOpen Theory Cove';
+      customerDraft.href = 'mailto:' + encodeURIComponent(result.email) + '?subject='
+        + encodeURIComponent('Your CoveScapes download access') + '&body=' + encodeURIComponent(body);
+      linkArea.hidden = false;
+      fulfillmentStatus.textContent = 'Access saved for ' + result.email + '. Send the customer their sign-in link.';
+    } catch (error) {
+      fulfillmentStatus.textContent = error.message;
+    } finally {
+      button.disabled = false;
+    }
   });
   out.addEventListener('click', () => {
     const current = token;
