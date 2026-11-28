@@ -9,7 +9,7 @@
 .cove-edition-detail .cove-edition-actions { display:flex; align-items:center; gap:.55rem; flex-wrap:wrap; margin-block:1rem .55rem; }
 .cove-edition-detail .cove-edition-actions .button { min-height:44px; padding:.65rem .8rem; white-space:nowrap; }
 .cove-edition-detail button[disabled] { cursor:default; opacity:.82; }
-.cove-edition-detail .cove-edition-scene { display:block; max-width:52rem; margin-inline:auto; }
+.cove-edition-scene { display:block; width:100%; height:auto; max-width:52rem; margin-inline:auto; border-radius:.55rem; }
 .cove-edition-scene-figure figcaption { text-align:center; }
 .cove-edition-thumbs-pair { max-width:52rem; margin-inline:auto; }
 .cove-edition-thumbs.cove-edition-thumbs-pair { grid-template-columns:repeat(2,minmax(0,1fr)); }
