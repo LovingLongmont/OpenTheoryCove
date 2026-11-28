@@ -14,6 +14,14 @@
 .collection-preview-details{text-align:center}
 section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
 #download-library{margin-top:0}
+.cove-download-access{margin:20px 0 28px;padding:clamp(16px,3vw,28px);background:#fffdf8;border:1px solid var(--line,#dedbd2);border-radius:12px}
+.cove-download-access h3{margin:0 0 6px}
+.cove-download-access p{margin:0 0 12px}
+.cove-download-access label{display:block;font-weight:600;margin-bottom:6px}
+.cove-sign-in-fields{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+.cove-sign-in-fields input{flex:1 1 240px;max-width:100%;min-width:0;padding:10px 12px;border:1px solid #9aa8a5;border-radius:5px;font:inherit}
+.cove-download-access [hidden]{display:none}
+#cove-download-status:not(:empty){margin:12px 0 0}
 </style>
 <link rel="stylesheet" href="/assets/covescapes-edition.css">
 </head>
@@ -31,16 +39,19 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
     <h2 id="download-library">Your CoveScapes download library</h2>
     <p>With your one-time collection purchase, you can download as many desktop browser start pages as you like from the current CoveScapes collection.</p>
 
-    <details id="owner-download-test" style="margin:16px 0 24px">
-      <summary>Owner test access</summary>
-      <form id="cove-owner-sign-in">
-        <label for="cove-owner-email">Owner email</label>
-        <input id="cove-owner-email" name="email" type="email" required autocomplete="email">
-        <button type="submit" class="button button-outline">Email me a sign-in link</button>
+    <section class="cove-download-access" aria-labelledby="cove-sign-in-title">
+      <h3 id="cove-sign-in-title">Sign in to download</h3>
+      <p id="cove-sign-in-instructions">Enter the email you used at Square checkout. We’ll send a sign-in link to unlock your designs for this visit.</p>
+      <form id="cove-download-sign-in" aria-describedby="cove-sign-in-instructions">
+        <label for="cove-download-email">Email address</label>
+        <div class="cove-sign-in-fields">
+          <input id="cove-download-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+          <button type="submit" class="button button-primary">Email me a sign-in link</button>
+        </div>
       </form>
-      <button type="button" id="cove-owner-sign-out" class="button button-outline" hidden>Sign out</button>
-      <p id="cove-owner-status" role="status"></p>
-    </details>
+      <button type="button" id="cove-download-sign-out" class="button button-outline" hidden>Sign out</button>
+      <p id="cove-download-status" role="status"></p>
+    </section>
     <ul class="collection-previews" aria-label="Designs in the download collection">
       <li><a href="/assets/aurora-ridge-holiday-listing.svg" data-cove-edition-preview aria-label="View Aurora Ridge Christmas preview"><img src="/assets/aurora-ridge-holiday-listing.svg" alt="Aurora Ridge browser homepage on a monitor in a Christmas scene" loading="lazy" decoding="async"></a><div class="collection-preview-details"><h3>Aurora Ridge</h3><button type="button" class="button button-primary" disabled aria-label="Download Aurora Ridge ZIP" data-zip="Aurora-Ridge-CoveScapes-Browser-Homepage(1).zip">Download ZIP</button></div></li>
       <li><a href="/assets/bamboo-brook-holiday-listing.svg" data-cove-edition-preview aria-label="View Bamboo Brook Christmas preview"><img src="/assets/bamboo-brook-holiday-listing.svg" alt="Bamboo Brook browser homepage on a monitor in a Christmas scene" loading="lazy" decoding="async"></a><div class="collection-preview-details"><h3>Bamboo Brook</h3><button type="button" class="button button-primary" disabled aria-label="Download Bamboo Brook ZIP" data-zip="Bamboo-Brook-CoveScapes-Browser-Homepage(1).zip">Download ZIP</button></div></li>
@@ -87,18 +98,16 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
   const api = 'https://dvdjpwzyirryuhdvlyid.supabase.co';
   const key = 'sb_publishable_bzUTeV_3sLFrMxPXbzqqSA_DZwWnISi';
   const redirect = 'https://opentheorycove.com/covescapes-downloads.html';
-  const sessionKey = 'cove-owner-download-session';
-  const panel = document.getElementById('owner-download-test');
-  const form = document.getElementById('cove-owner-sign-in');
-  const status = document.getElementById('cove-owner-status');
-  const out = document.getElementById('cove-owner-sign-out');
+  try { sessionStorage.removeItem('cove-owner-download-session'); } catch {}
+  const form = document.getElementById('cove-download-sign-in');
+  const status = document.getElementById('cove-download-status');
+  const out = document.getElementById('cove-download-sign-out');
   const buttons = [...document.querySelectorAll('[data-zip]')];
   const fragment = new URLSearchParams(location.hash.slice(1));
   if (fragment.has('access_token') || fragment.has('error')) {
     history.replaceState(null, '', location.pathname + location.search);
-    panel.open = true;
   }
-  let token = fragment.get('access_token') || sessionStorage.getItem(sessionKey);
+  let token = fragment.get('access_token');
   if (fragment.has('error')) status.textContent = 'This sign-in link could not be used. Request a fresh link.';
   async function request(url, body, accessToken) {
     const headers = {'apikey': key, 'Content-Type': 'application/json'};
@@ -111,16 +120,13 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
   const deliver = (body) => request(api + '/functions/v1/covescapes-download', body, token);
   function reset(message) {
     token = null;
-    sessionStorage.removeItem(sessionKey);
     buttons.forEach(button => button.disabled = true);
     out.hidden = true;
     form.hidden = false;
     status.textContent = message;
   }
   if (token) {
-    panel.open = true;
     deliver({action:'access'}).then(() => {
-      sessionStorage.setItem(sessionKey, token);
       buttons.forEach(button => button.disabled = false);
       form.hidden = true;
       out.hidden = false;
@@ -142,6 +148,9 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
       button.disabled = false;
     }
   });
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) reset('Sign in again to start a new visit.');
+  });
   out.addEventListener('click', () => {
     const current = token;
     reset('Signed out.');
@@ -161,8 +170,7 @@ section.covescapes-download-library{padding-top:clamp(14px,2vw,24px)}
       link.remove();
       status.textContent = 'Download started.';
     } catch (error) {
-      panel.open = true;
-      status.textContent = error.message;
+        status.textContent = error.message;
     } finally {
       button.disabled = !token;
     }
